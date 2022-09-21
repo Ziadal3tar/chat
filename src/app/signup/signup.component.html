@@ -1,3 +1,4 @@
+
 <div [ngClass]="{'bg-light ': mood == 'night','bg-main text-white ':mood == 'morning'}"
 class="col-12 row m-0 text-black d-flex align-items-center   ">
 
@@ -18,27 +19,77 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
 
 </div>
 
-<div [dir]="dir" class="main  d-flex align-items-center justify-content-center  p-0 ">
+<div [dir]="dir" class="main  d-flex align-items-center justify-content-center p-0 ">
 
 
-  <div class=" container d-flex align-items-center justify-content-center h-100  m-0 p-0">
-    <img src="./assets/img/Hello-rafiki (3).svg" [ngClass]="hello" class="wow fadeInDown w-50 vh-100 "
+
+
+
+<!-- bae0ff
+6df0ff
+52fbdd -->
+  <div  class=" container d-flex align-items-center justify-content-center   m-0 p-0">
+
+
+
+
+
+    <img src="./assets/img/Group discussion-rafiki.svg" [ngClass]="hello" style="" class="wow fadeInDown w-50   text-center"
       data-wow-delay="0.3s" alt="">
 
 
     <div dir="rtl" [ngClass]="loginArabic" style="background-color: transparent!important;"
-      class="arabic flex-wrap-reverse div-login d-flex align-items-center  bg-black justify-content-center  rounded-3 w-100 h-75 overflow-hidden container ">
-      <div class="row w-100 h-100 flex-wrap-reverse p-0 ">
+      class="arabic flex-wrap-reverse div-login d-flex align-items-center  bg-black justify-content-center  rounded-3 w-100 h-auto  container ">
+
+      <div class="row w-100 h-100 flex-wrap-reverse p-0">
+
+
+
+
+
+
+
 
         <div [ngClass]="{'bg-opacity-75 bg-black': mood == 'night'}"
           class="col-md-6 col-sm-12 row leftHalf d-flex flex-column align-items-center justify-content-center m-0 ">
           <div class=" col-10 d-flex flex-column align-items-center justify-content-center ">
+
+
             <div class="input-group mb-3  ">
-              <input type="text" class="form-control rounded-0 rounded-end" placeholder="الهاتف أو البريد الإلكتروني"
+
+              <input type="text" class="form-control rounded-0 rounded-end" placeholder="الاسم" aria-label="Username"
+                aria-describedby="basic-addon1">
+
+                <span class="input-group-text bg-white rounded-0 rounded-start" id="basic-addon1">
+                  <i  class="fa-solid fa-signature text-black rounded-5 d-flex align-items-center justify-content-center"></i></span>
+            </div>
+
+
+            <div class="input-group mb-3  ">
+              <input type="text" class="form-control rounded-0 rounded-end" placeholder="البريد الإلكتروني"
                 aria-describedby="basic-addon1">
               <span class="input-group-text bg-white rounded-0 rounded-start" id="basic-addon1"><i
                   class="fa-solid fa-user text-black rounded-5 d-flex align-items-center justify-content-center"></i></span>
             </div>
+
+
+
+
+
+ <div class="input-group mb-3  ">
+
+                <input  type="text" class="form-control rounded-0 rounded-end" placeholder="الهاتف" aria-label="Username"
+                  aria-describedby="basic-addon1">
+
+                  <span class="input-group-text bg-white rounded-0 rounded-start" id="basic-addon1"><i
+                    class="fa-solid fa-phone text-black rounded-5 d-flex align-items-center justify-content-center"></i></span>
+              </div>
+
+
+
+
+
+
             <div class="input-group   ">
               <span class="input-group-text bg-white rounded-0 rounded-end" id="basic-addon1"><i
                   style="cursor: pointer;" class="fa-solid fa-eye-low-vision"></i></span>
@@ -46,6 +97,24 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
               <span class="input-group-text bg-white rounded-0 rounded-start" id="basic-addon1"><i
                   class="fa-solid fa-lock text-black  d-flex align-items-center justify-content-center"></i></span>
             </div>
+
+
+            <div class="input-group mt-3">
+              <span class="input-group-text bg-white rounded-0 rounded-end" id="basic-addon1"><i style="cursor: pointer;"
+                class="fa-solid fa-eye-low-vision"></i></span>
+
+
+              <input type="text" class="form-control " placeholder="تأكيد كلمه السر " aria-label="Username"
+                aria-describedby="basic-addon1">
+
+
+                <span class="input-group-text bg-white rounded-0 rounded-start" id="basic-addon1"><i
+                  class="fa-solid fa-lock text-black  d-flex align-items-center justify-content-center"></i></span>
+
+            </div>
+
+
+
             <div [ngClass]="{'text-white': mood == 'night'}"
               class=" col-12  d-flex align-items-center justify-content-between row mt-md-3 mt-sm-0 ">
               <div class="col-lg-6 col-sm-12 d-flex p-0"><input class=" my-auto me-1" type="checkbox">
@@ -85,7 +154,7 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
 
 
           <div class=" mt-2 col-6">
-            <div class=" d-flex my-2 w-100 col">
+            <div class=" d-flex my-2 w-100 ">
 
               <button class=" btn  rounded-end rounded-0 m-0 border-0 py-2 px-0 text-white w-100 "
                 style="background-color: #3a5999;">فيس بوك</button>
@@ -116,7 +185,7 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
 
         <div [ngClass]="{'bg-opacity-75 bg-black nightborder': mood == 'night'}"
           class="col-md-6 col-sm-12  rightHalf d-flex align-items-center justify-content-center">
-          <img src="./assets/img/Gen Z-pana.svg" class=" w-75" alt="">
+          <img src="./assets/img/Sign up-bro.svg" class=" w-75" alt="">
         </div>
       </div>
 
@@ -129,17 +198,42 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
       <div class="row w-100 h-100 flex-wrap-reverse p-0">
         <div [ngClass]="{'bg-opacity-75 bg-black': mood == 'night'}"
           class="col-md-6 col-sm-12 row leftHalf d-flex flex-column align-items-center justify-content-center m-0 ">
+
           <div class=" col-10 d-flex flex-column align-items-center justify-content-center ">
+
+            <div class="input-group mb-3  ">
+              <span class="input-group-text bg-white" id="basic-addon1">
+                <i  class="fa-solid fa-signature text-black rounded-5 d-flex align-items-center justify-content-center"></i></span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+
             <div class="input-group mb-3  ">
               <span class="input-group-text bg-white" id="basic-addon1"><i
                   class="fa-solid fa-user text-black rounded-5 d-flex align-items-center justify-content-center"></i></span>
-              <input type="text" class="form-control" placeholder="Phone or email" aria-label="Username"
+              <input type="email" class="form-control" placeholder="Email" aria-label="Email"
                 aria-describedby="basic-addon1">
             </div>
-            <div class="input-group   ">
+
+              <div class="input-group mb-3  ">
+                <span class="input-group-text bg-white" id="basic-addon1"><i
+                    class="fa-solid fa-phone text-black rounded-5 d-flex align-items-center justify-content-center"></i></span>
+                <input type="text" class="form-control" placeholder="Phone" aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+
+            <div class="input-group mb-3  ">
               <span class="input-group-text bg-white" id="basic-addon1"><i
                   class="fa-solid fa-lock text-black  d-flex align-items-center justify-content-center"></i></span>
               <input type="text" class="form-control" placeholder="Password" aria-label="Username"
+                aria-describedby="basic-addon1">
+              <span class="input-group-text bg-white" id="basic-addon1"><i style="cursor: pointer;"
+                  class="fa-solid fa-eye-low-vision"></i></span>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text bg-white" id="basic-addon1"><i
+                  class="fa-solid fa-lock text-black  d-flex align-items-center justify-content-center"></i></span>
+              <input type="text" class="form-control" placeholder="Confirm Password" aria-label="Username"
                 aria-describedby="basic-addon1">
               <span class="input-group-text bg-white" id="basic-addon1"><i style="cursor: pointer;"
                   class="fa-solid fa-eye-low-vision"></i></span>
@@ -150,13 +244,13 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
                 <p class=" my-auto mb-1 opacity-75 ">Remember me</p>
               </div>
               <div class=" col-lg-6 col-sm-12 p-0 ">
-                <button class="w-100 btn btn-info text-white ">LOGIN</button>
+                <button class="w-100 btn btn-info text-white ">SIGNUP</button>
               </div>
             </div>
             <div [ngClass]="{'text-white': mood == 'night'}" style="font-size: 15px !important;"
               class="col-12   d-flex align-items-center justify-content-between mt-3">
-              <div routerLink="/regester" class=" d-flex text-primary opacity-75 ">
-                <p>RegesterNow</p>
+              <div routerLink="/login" class=" d-flex text-primary opacity-75 ">
+                <p>login</p>
               </div>
               <div class=" d-flex opacity-75">
                 <p>ForgetPassword?</p>
@@ -192,7 +286,7 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
         </div>
         <div [ngClass]="{'bg-opacity-75 bg-black nightborder': mood == 'night'}"
           class="col-md-6 col-sm-12  rightHalf d-flex align-items-center justify-content-center">
-          <img src="./assets/img/Gen Z-pana.svg" class=" w-75" alt="">
+          <img src="./assets/img/Sign up-bro.svg" class=" w-75" alt="">
         </div>
       </div>
     </div>
