@@ -1,0 +1,294 @@
+<div class=" main w-auto h-auto  ">
+  <div [ngClass]="cont" class="align-items-center justify-content-center d-flex">
+    <div [ngClass]="english" class="english row vh-100 d-flex align-items-center justify-content-center  ">
+
+
+      <div [ngClass]="chat" class=" col-lg-8 col-sm-12 row d-flex flex-column align-items-center justify-content-center h-100 p-md-4 p-sm-0 position-relative ">
+
+        <div ngClass="bgcolor" class="  col-12 row d-flex justify-content-between align-items-center p-0 rounded-top bg-light text-white "
+          style="height:8% ;">
+
+          <div class=" row  d-flex text-black align-items-center justify-content-around m-0 col-lg-4 col-4">
+            <div class="d-flex col-6 text-black align-items-center justify-content-around border-end border-dark ">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+
+            <div class="d-flex col-6 text-black align-items-center justify-content-around">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+          </div>
+
+          <div
+            class="d-flex align-items-center justify-content-around h-auto my-auto m-0 col-lg-4 col-md-4 text-black col-8 ">
+            <p class=" my-auto chatName">{{nameChat}}
+            </p>
+            <div
+              style="width: 45px; height: 45px; background-image: url(../../../assets/img/WhatsApp\ Image\ 2022-09-14\ at\ 6.12.54\ PM.jpeg); background-size: cover; background-position: center center;"
+              class=" rounded-5 overflow-hidden">
+            </div>
+            <i style="cursor: pointer;" (click)="closeChat()"   class="fa-solid fa-xmark"></i>
+                    </div>
+
+
+
+          <div>
+
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class=" w-100 p-0 col-12 row position-relative  "
+          style="height: 84%; background-image: url(../../../assets/img/5556.jpg); background-size: cover; background-position: center center; scrollbar-gutter: stable;overflow-y: auto;">
+          <div class="  opacity-75 col-12  m-0 position-absolute h-100 w-100 m-0 py-0"
+            style="background-color: #205157;"> </div>
+
+
+
+          <div *ngFor="let message of chats let i = index"
+            [ngClass]="{'justify-content-end': message?.from == 'me','mt-3': i==0 } "
+            class="col-12  d-flex align-items-start " style="z-index: 9;">
+
+
+            <div>
+              <p *ngIf="message.from !='me'" class=" text-start m-0 ms-3 text-white"> folan el folany</p>
+
+              <p [ngClass]="{'me': message?.from == 'me','other':message?.from == 'other' }" class=" fs-6 w-auto  "
+                style="width: auto!important;">
+
+                {{message?.message}}</p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div ngClass="bgcolor" class="  col-12 bg-light rounded-bottom d-flex align-items-center justify-content-center "
+          style="height:8% ;">
+          <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center "><i
+              class="fa-solid fa-face-smile"></i>
+          </div>
+          <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center"><i
+              class="fa-solid fa-paperclip"></i>
+          </div>
+          <div class=" col-md-9 col-6"> <input type="text" placeholder="your message"
+              class=" w-100 rounded-5 bg-white border-0 p-2 ps-3"> </div>
+          <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center"><i
+              class="fa-solid fa-microphone"></i>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+      <div style="z-index: 9;" [ngClass]="friend" class=" col-lg-4 p-md-4 p-sm-0 h-100 overflow-hidden ">
+
+
+        <div ngClass="bgcolor"
+          class="col-12 h-100 row d-flex m-0 justify-content-end align-items-center p-0 rounded-top bg-light text-white "
+          style="height:8% ;">
+
+
+          <div ngClass="bgcolor color"
+            class="d-flex align-items-center justify-content-around col-lg-8 col-md-4 col-sm-12 h-auto my-auto text-black ">
+            <p class=" my-auto">ziad almorsy</p>
+            <div
+              style="width: 45px; height: 45px; background-image: url(../../../assets/img/WhatsApp\ Image\ 2022-09-14\ at\ 6.12.54\ PM.jpeg); background-size: cover; background-position: center center;"
+              class=" rounded-5 overflow-hidden">
+            </div>
+          </div>
+
+
+          <div ngClass="bgcolor" class="  col-12 p-3 m-0 bg-light border-top text-black d-flex align-items-center justify-content-center "
+            style="height:8% ;">
+            <input type="text" style="border-radius:  50px 0 0 50px  ; outline: none!important; width: 90%;"
+              class="  p-1 ps-3 border-0  " placeholder="Username">
+            <span class="p-1 bg-white" style="border-radius: 0 50px 50px 0 ; width: 10%;"> <i
+                class="fa-solid fa-magnifying-glass  "></i>
+            </span>
+          </div>
+
+          <div ngClass="bgcolor" style="height: 84%; scrollbar-gutter: stable;overflow-y: auto;"
+            class=" col-12  m-0  rounded-0 rounded-bottom bg-light ov">
+            <div ngClass="bgcolor color" style="cursor: pointer;"  *ngFor="let item of friends let i = index" (click)="openChat(i)"
+              class="d-flex align-items-center bg-light m-0 justify-content-between col-12 h-auto py-3 text-black  p-md-3 border-bottom ">
+
+              <div class="d-flex  text-black align-items-center justify-content-around ">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+              <p class=" my-auto me-3">{{item.name}}</p>
+              <div
+                style="width: 45px; height: 45px; background-size: cover; background-position: center center;"
+                class=" rounded-5 overflow-hidden">
+                <img class=" w-100" [src]="item.img" alt="">
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+    <div [ngClass]="arabic" dir="rtl" class="arabic row vh-100 d-flex align-items-center justify-content-center ">
+
+
+      <div [ngClass]="chat" class="col-lg-8 col-sm-12 row d-flex flex-column align-items-center justify-content-center h-100 p-md-4 p-sm-0 position-relative">
+
+        <div ngClass="bgcolor"
+          class="  col-12 row d-flex justify-content-between align-items-center p-0 rounded-top  text-white "
+          style="height:8% ;">
+
+          <div class=" row  d-flex text-black align-items-center justify-content-around m-0 col-lg-4 col-4">
+            <div class="d-flex col-6 text-black align-items-center justify-content-around border-start border-dark ">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+
+            <div class="d-flex col-6 text-black align-items-center justify-content-around">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+          </div>
+
+          <div
+            class="d-flex align-items-center justify-content-around h-auto my-auto m-0 col-lg-4 col-md-4 text-black col-8 ">
+            <p class=" my-auto chatName">{{nameChat}}</p>
+            <div
+              style="width: 45px; height: 45px; background-image: url(../../../assets/img/WhatsApp\ Image\ 2022-09-14\ at\ 6.12.54\ PM.jpeg); background-size: cover; background-position: center center;"
+              class=" rounded-5 overflow-hidden">
+            </div>
+            <i style="cursor: pointer;" (click)="closeChat()"   class="fa-solid fa-xmark"></i>
+
+          </div>
+
+
+
+          <div>
+
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class=" w-100 p-0 col-12 row position-relative  "
+          style="height: 84%; background-image: url(../../../assets/img/5556.jpg); background-size: cover; background-position: center center; scrollbar-gutter: stable;overflow-y: auto;">
+          <div class="  opacity-75 col-12  m-0 position-absolute h-100 w-100 m-0 py-0"
+            style="background-color: #205157;"> </div>
+
+
+
+          <div *ngFor="let message of chats let i = index"
+            [ngClass]="{'justify-content-end': message?.from == 'me','mt-3': i==0 } "
+            class="col-12  d-flex align-items-start " style="z-index: 9;">
+
+
+            <div>
+              <p *ngIf="message.from !='me'" class=" text-end m-0 me-3 text-white"> فولان الفولاني</p>
+
+              <p [ngClass]="{'me': message?.from == 'me','other':message?.from == 'other' }" class=" fs-6 w-auto  "
+                style="width: auto!important;">
+
+                {{message?.message}}</p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div ngClass="bgcolor" class="  col-12 rounded-bottom d-flex align-items-center justify-content-center "
+          style="height:8% ;">
+          <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center "><i
+              class="fa-solid fa-face-smile"></i>
+          </div>
+          <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center"><i
+              class="fa-solid fa-paperclip"></i>
+          </div>
+          <div class=" col-md-9 col-6"> <input type="text" placeholder="اكتب رسالتك"
+              class=" w-100 rounded-5 bg-white border-0 p-2 ps-3"> </div>
+          <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center"><i
+              class="fa-solid fa-microphone"></i>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+      <div style="z-index: 9;" [ngClass]="friend" class=" col-lg-4 p-md-4 p-sm-0 h-100 overflow-hidden  ">
+        <div style="z-index: 10;"  class="icone  fs-4 position-absolute start-0 top-50 transition">
+          <i [ngClass]="openIcon" class="fa-solid transition"></i>
+        </div>
+
+        <div ngClass="bgcolor"
+          class="col-12 h-100 row d-flex m-0 justify-content-end align-items-center p-0 rounded-top bg-light text-white "
+          style="height:8% ;">
+
+
+          <div ngClass="color"
+            class="d-flex align-items-center justify-content-between col-lg-6 col-md-4 col-sm-12 h-auto my-auto text-black ">
+
+            <p class=" my-auto">زياد المرسي</p>
+            <div
+              style="width: 45px; height: 45px; background-image: url(../../../assets/img/WhatsApp\ Image\ 2022-09-14\ at\ 6.12.54\ PM.jpeg); background-size: cover; background-position: center center;"
+              class=" rounded-5 overflow-hidden">
+            </div>
+          </div>
+
+
+          <div ngClass="bgcolor"
+            class="  col-12 p-3 m-0 bg-white border-top text-black d-flex align-items-center justify-content-center "
+            style="height:8% ;">
+            <input type="text" style="border-radius:  50px 0 0 50px  ; outline: none!important; width: 90%;"
+              class="  p-1 pe-3 border-0 rounded-end rounded-0  " placeholder="الاسم">
+            <span class="p-1 ps-2 bg-white text-start rounded-start rounded-0" style="border-radius: 0 50px 50px 0 ; width: 10%;"> <i
+                class="fa-solid fa-magnifying-glass  "></i>
+            </span>
+          </div>
+
+          <div ngClass="bgcolor" style="height: 84%; scrollbar-gutter: stable;overflow-y: auto;"
+            class=" col-12  m-0  rounded-0 rounded-bottom bg-light ov">
+            <div style="cursor: pointer;" ngClass="color bgcolor" *ngFor="let item of friends let i = index" (click)="openChat(i)"
+              class="d-flex align-items-center bg-light m-0 justify-content-between col-12 h-auto py-3 text-black  p-md-3 border-bottom ">
+
+              <div class="d-flex  text-black align-items-center justify-content-around ">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+
+              <p class=" my-auto me-3 ">{{item.name}}</p>
+              <div
+                style="width: 45px; height: 45px; background-image: url(../../../assets/img/WhatsApp\ Image\ 2022-09-14\ at\ 6.12.54\ PM.jpeg); background-size: cover; background-position: center center;"
+                class=" rounded-5 overflow-hidden ">
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>

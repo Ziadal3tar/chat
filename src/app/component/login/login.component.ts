@@ -1,5 +1,6 @@
-import { ShareFunctionsService } from './../services/share-functions.service';
+import { ShareFunctionsService } from './../../services/share-functions.service';
 import { Component, ElementRef, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,19 +12,19 @@ export class LoginComponent implements OnInit {
   loginEnglish="d-none"
   dir:any
   colorValue:any
+  mood = "morning"
+
   morning="url(./assets/img/white-abstract-background_23-2148817571.jpg)"
   night="url(./assets/img/6222603.jpg)"
-  mood = "morning"
   language = "العربية"
   constructor(
+    private ShareFunctionsService:ShareFunctionsService,
     private elem: ElementRef,
-    private ShareFunctionsService:ShareFunctionsService
 ) {
     this.colorValue = "yellow";
    }
 
   ngOnInit(): void {
-
     this.elem.nativeElement.style.setProperty('--bg', this.morning);
     this.elem.nativeElement.style.setProperty('--bgline','rgb(0 0 0 / 20%)' );
 

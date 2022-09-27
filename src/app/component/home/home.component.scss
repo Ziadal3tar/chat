@@ -1,0 +1,166 @@
+.arabic,i,h1,h2,h3,h4,h5,h6,.chatName{
+  color: var(--color) !important;
+}
+input{
+  outline: none !important;
+}
+.me{
+  background-color: #154638;
+  color: #ffffff;
+  padding: 5px 15px;
+border-radius: 50px;
+}
+.bgcolor{
+background-color: var(--bgcolor) !important;
+}
+.color{
+  color: var(--color) !important;
+  // color: red !important;
+}
+
+.other{
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5px 15px;
+border-radius: 50px;
+}
+
+
+
+@media  (max-width: 991px)  {
+.chat{
+  display: none !important;
+}
+.friend{
+  display: none !important;
+}
+}
+@media  (max-width: 550px)  {
+
+.friend{
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0px !important;
+}
+.chat{
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+}
+// .english .open{
+//   transition: 0.5s;
+
+// position: absolute;
+// right: 0px;
+// width: 70%;
+
+// }
+
+
+// .arabic .open{
+//   transition: 0.5s;
+
+// position: absolute;
+// left: 0px;
+// width: 70%;
+
+// }
+
+// @media (max-width:  992px) {
+//   .english .icone{
+//     display: block;
+//     right: 0% !important;
+//     left: 100%;
+//   }
+//   .english .open{
+//     transition: 0.5s;
+//   position: fixed;
+//   right: 0px;
+//   width: 70%;
+//   }
+//   .english .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   right: -57.5%;
+//   width: 60%;
+//   }
+
+
+//   .arabic .icone{
+//     display: block;
+//     left: 100% !important;
+//     right: 0%;
+//   }
+//   .arabic .open{
+//     transition: 0.5s;
+//   position: fixed;
+//   left: 0px;
+//   width: 70%;
+//   }
+//   .arabic .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   left: -57.5%;
+//   width: 60%;
+//   }
+// }
+
+// @media (min-width:680px) and (max-width: 830px) {
+//   .english .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   right: -57%;
+//   width: 60%;
+//   }
+
+//   .arabic .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   left: -57%;
+//   width: 60%;
+//   }
+// }
+// @media (min-width:470px) and (max-width: 680px) {
+//  .english .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   right: -56%;
+//   width: 60%;
+//   }
+
+//   .arabic .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   left: -56%;
+//   width: 60%;
+//   }
+// }
+// @media (max-width:470px) {
+//   .english .chatName{
+//     font-size: 14px;
+//     margin-right: 5px;
+//     padding: 0;
+//   }
+//  .english .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   right: -55%;
+//   width: 60%;
+//   }
+
+//   .arabic .chatName{
+//     font-size: 14px;
+//     margin-left: 5px;
+//     padding: 0;
+//   }
+//  .arabic .close{
+//     transition: 0.5s;
+//   position: fixed;
+//   left: -55%;
+//   width: 60%;
+//   }
+// }
+

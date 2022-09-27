@@ -1,4 +1,4 @@
-import { ShareFunctionsService } from './../services/share-functions.service';
+import { ShareFunctionsService } from '../../services/share-functions.service';
 import { Component, ElementRef, OnInit } from '@angular/core';
 @Component({
   selector: 'app-signup',
@@ -22,8 +22,8 @@ export class SignupComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    this.elem.nativeElement.style.setProperty('--bg', this.morning);
-    this.elem.nativeElement.style.setProperty('--bgline','rgb(0 0 0 / 20%)' );
+    // this.elem.nativeElement.style.setProperty('--bg', this.morning);
+    // this.elem.nativeElement.style.setProperty('--bgline','rgb(0 0 0 / 20%)' );
 
     if (this.language == "العربية") {
       setTimeout(() => {

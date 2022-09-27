@@ -1,15 +1,16 @@
 <div [ngClass]="{'bg-light ': mood == 'night','bg-main text-white ':mood == 'morning'}"
-class="col-12 row m-0 text-black d-flex align-items-center   ">
+class="col-12 row m-0 text-black d-flex align-items-center  py-1 ">
 
 
 <div class=" col-12 d-flex align-items-center justify-content-around  ">
 
   <div (click)="changeMood()"
-    [ngClass]="{' justify-content-end text-white': mood == 'morning',' justify-content-start text-black':mood == 'night'}"
+    [ngClass]="{'justify-content-end text-white': mood == 'morning','justify-content-start text-black':mood == 'night'}"
     style="width:45px; height: 20px; background-color: transparent; border: solid 1px black; cursor: pointer;"
-    class=" transition rounded-5 d-flex align-items-center  p-2 my-auto">
+    class=" transition rounded-5 d-flex align-items-center  p-2 my-auto position-relative ">
+
     <i style="font-size: 13px;" [ngClass]="{'fa-sun': mood == 'morning',' fa-moon':mood == 'night'}"
-      class="fa-solid transition text-black"></i>
+      class="fa-solid transition text-black position-absolute  "></i>
   </div>
 
   <p style="cursor: pointer;" (click)="changeLang()" class="  my-auto end-0 my-0 text-black">{{language}}</p>
@@ -52,14 +53,14 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
                 <p class=" my-auto mb-1 opacity-75 ">تذكرني</p>
               </div>
               <div class=" col-lg-6 col-sm-12 p-0 ">
-                <button class="w-100 btn btn-info text-white ">تسجيل الدخول</button>
+                <button routerLink="/home" class="w-100 btn btn-info text-white ">تسجيل الدخول</button>
               </div>
             </div>
 
             <div [ngClass]="{'text-white': mood == 'night'}" style="font-size: 15px !important;"
               class="col-12   d-flex align-items-center justify-content-between mt-3">
               <div class=" d-flex text-primary opacity-75 ">
-                <p>انشاء حساب</p>
+                <p routerLink="/regester" style="cursor: pointer;">انشاء حساب</p>
               </div>
               <div class=" d-flex opacity-75">
                 <p>هل نسيت الرقم السري ؟</p>
@@ -146,17 +147,17 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
             </div>
             <div [ngClass]="{'text-white': mood == 'night'}"
               class=" col-12  d-flex align-items-center justify-content-between row mt-md-3 mt-sm-0 ">
-              <div class="col-lg-6 col-sm-12 d-flex p-0"><input class=" my-auto me-1" type="checkbox">
+              <div class="col-lg-6 col-sm-12 d-flex p-0"><input disabled class=" my-auto me-1" type="checkbox">
                 <p class=" my-auto mb-1 opacity-75 ">Remember me</p>
               </div>
               <div class=" col-lg-6 col-sm-12 p-0 ">
-                <button class="w-100 btn btn-info text-white ">LOGIN</button>
+                <button routerLink="/home" class="w-100 btn btn-info text-white ">LOGIN</button>
               </div>
             </div>
             <div [ngClass]="{'text-white': mood == 'night'}" style="font-size: 15px !important;"
               class="col-12   d-flex align-items-center justify-content-between mt-3">
-              <div routerLink="/regester" class=" d-flex text-primary opacity-75 ">
-                <p>RegesterNow</p>
+              <div  class=" d-flex text-primary opacity-75 ">
+                <p  [ngClass]="{'text-main': mood == 'night'}" routerLink="/regester" style="cursor: pointer;">Regester</p>
               </div>
               <div class=" d-flex opacity-75">
                 <p>ForgetPassword?</p>
@@ -180,6 +181,7 @@ class="col-12 row m-0 text-black d-flex align-items-center   ">
                   class="fa-brands fa-facebook text-white  d-flex align-items-center justify-content-center"></i></span>
               <button class=" btn  rounded-end rounded-0 m-0 border-0 py-2 px-0 text-white w-100 "
                 style="background-color: #3a5999;">FACEBOOK</button>
+
             </div>
             <div class=" d-flex my-2  w-100 ">
               <span class="input-group-text m-0 rounded-start rounded-0 border-0" style="background-color: #ef4437;"
