@@ -1,0 +1,25 @@
+.menu:hover{
+  background: rgb(186, 186, 186);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.bg{
+  background: rgb(186, 186, 186);
+}
+
+@media (min-width: 250px) and (max-width: 600px)  {
+.big{
+  display: none ;
+}
+.small{
+position: absolute;
+}
+}
+@media  (min-width: 600px) and (max-width: 3000px)  {
+  .small{
+    display: none !important;
+  }
+  .big{
+    display: block;
+  }
+  }

@@ -1,17 +1,42 @@
+import { SettingComponent } from './../component/setting/setting.component';
+import { UserService } from './user.service';
 import { SignupComponent } from '../component/signup/signup.component';
 import { Injectable } from '@angular/core';
+import { observable, Subject } from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root',
 
 })
 
 export class ShareFunctionsService {
+  private Subject = new Subject<any>()
   mood :any
   data={
     mood:'morning',
     lang:'english'
   }
-    constructor() { }
+  setting=true
+  signOut: any ;
+    constructor(private UserService:UserService
+) { }
+
+sendClickEvent(){
+  this.Subject.next('f')
+}
+
+getClickEvent():any{
+return this.Subject.asObservable()
+}
+
+
+
+
+
+
+
+
 
 
 getData(){
@@ -32,4 +57,16 @@ getData(){
 
     }
   }
+  getUserData() {
+    const data = {
+      token: localStorage.getItem('token'),
+    };
+    return this.UserService.getUserData(data)
+  }
+
+  sittingPage(){
+    this.setting = !this.setting
+    return this.setting
+  }
+
 }

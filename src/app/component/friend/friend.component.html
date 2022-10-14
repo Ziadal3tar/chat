@@ -1,0 +1,29 @@
+<div class=" w-100 border-bottom pb-2 d-flex align-items-center justify-content-between  ">
+  <p class="fa fs-3 m-0"> friend</p>
+<div class=" m-0 p-0 my-auto cursorPointer backHome" (click)="backHome()"><i class="fa-solid fa-house p-0 m-0"></i></div>
+</div>
+
+
+<div class=" col-12 row py-4">
+
+  <div class="col-lg-6 col-md-12 m-0 d-flex align-items-center justify-content-center flex-column" *ngFor="let item of friends let i = index">
+    <div [style.background]="'url(' + item.profilePic[0] + ')'" class="userImg rounded-5 my-2 position-relative">
+            <div class=" position-absolute rounded-5" style="width: 14px; height: 14px; top: 2px; right: 2px; " [ngClass]="{'bg-secondary': item.isOnline , 'bg-success': !item.isOnline}"></div>
+
+    </div>
+    <h5>{{item.userName}}</h5>
+    <p style="font-size:13px ;">{{item.time}}</p>
+    <div class=" text-start w-100">
+      <p class=" m-0 "><i class="fa-solid fa-user-group"></i> {{item.friends.length}} friends</p>
+      <p class=" m-0 "><i class="fa-solid fa-user-group"></i> {{item.friends.length}} mutual friends</p>
+    </div>
+    <div class=" col-12 row d-flex align-items-center justify-content-evenly py-3">
+
+      <button style="font-size: 13px;" class=" fw-bolder col-4 p-0 py-1 btn btn-danger">Block</button>
+
+      <button style="font-size: 13px;" class="fw-bolder col-7 btn btn-primary py-1 p-0" >Remove</button>
+
+    </div>
+  </div>
+
+</div>

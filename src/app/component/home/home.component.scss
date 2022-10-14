@@ -1,6 +1,12 @@
 .arabic,i,h1,h2,h3,h4,h5,h6,.chatName{
   color: var(--color) !important;
 }
+.userImg{
+  width: 45px;
+  height: 45px;
+background-position: center center !important;
+background-size: cover !important;
+}
 input{
   outline: none !important;
 }
@@ -23,8 +29,12 @@ background-color: var(--bgcolor) !important;
   color: #000000;
   padding: 5px 15px;
 border-radius: 50px;
+
 }
 
+#dropdownBasic1::after{
+  display: none !important;
+  }
 
 
 @media  (max-width: 991px)  {

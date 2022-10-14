@@ -1,3 +1,4 @@
+import { LoginGuard } from './services/login.guard';
 import { HomeComponent } from './component/home/home.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { LoginComponent } from './component/login/login.component';
@@ -8,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'regester', component: SignupComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home',canActivate:[LoginGuard], component: HomeComponent },
 
   // { path: 'userinfo/settings', canActivate: [LogingurdGuard], component: UserinfoComponent },
 

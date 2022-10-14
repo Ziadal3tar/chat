@@ -1,0 +1,33 @@
+<div [ngClass]="main" class="  vh-100  col-12 row m-0 ">
+
+  <div  class="col-3 big">
+    <p class=" text-center fw-bolder">SETTING</p>
+    <div>
+      <p class="menu text-start my-5 p-1 rounded-5 ps-2" (click)="dnone()" (click)="setting = ''" [ngClass]="{'bg': setting == ''}"> <i class="fa-solid fa-gear"></i> setting</p>
+      <p class="menu text-start my-5 p-1 rounded-5 ps-2" (click)="dnone()" (click)="profile = ''" [ngClass]="{'bg': profile == ''}"> <i class="fa-solid fa-user"></i> profile</p>
+      <p class="menu text-start my-5 p-1 rounded-5 ps-2" (click)="dnone()" (click)="friend = ''" [ngClass]="{'bg': friend == ''}"> <i class="fa-solid fa-user-group"></i> firends</p>
+      <p class="menu text-start my-5 p-1 rounded-5 ps-2" (click)="dnone()" (click)="addFriend = ''" [ngClass]="{'bg': addFriend== ''}"> <i class="fa-solid fa-plus"></i> add firends</p>
+      <p class="menu text-start my-5 p-1 rounded-5 ps-2" (click)="dnone()" (click)="plans = ''" [ngClass]="{'bg': plans== ''}"> <i class="fa-solid fa-list-check"></i> reminder</p>
+      <p class="menu text-start my-5 p-1 rounded-5 ps-2" (click)="dnone()" (click)="stars = ''" [ngClass]="{'bg': stars == ''}"> <i class="fa-solid fa-star"></i> stars</p>
+
+    </div>
+
+  </div>
+  <div [ngClass]="half2" class=" m-0 " style="scrollbar-gutter: stable;overflow-y: auto; height:100% ;">
+  <app-all-setting [ngClass]="setting"></app-all-setting>
+  <app-profile [ngClass]="profile"></app-profile>
+  <app-friend [ngClass]="friend"   ></app-friend>
+  <app-add-friend [ngClass]="addFriend"></app-add-friend>
+  <app-plans [ngClass]="plans"></app-plans>
+  <app-stars [ngClass]="stars"></app-stars>
+</div>
+</div>
+<div class=" small text-black py-2 bg-main vw-100  position-absolute bottom-0 m-0 end-0 start-0 d-flex align-items-center justify-content-around ">
+  <div><i class=" fa-solid fa-user-group" (click)="dnone()" (click)="friend = ''"></i> </div>
+  <div><i class=" fa-solid fa-plus" (click)="dnone()" (click)="addFriend = ''"></i></div>
+  <div><i class="fs-3 fa-solid fa-user" (click)="dnone()" (click)="profile = ''"></i></div>
+  <div><i class=" fa-solid fa-list-check" (click)="dnone()" (click)="plans = ''"></i></div>
+  <div><i class=" fa-solid fa-star" (click)="dnone()" (click)="stars = ''"></i></div>
+
+
+</div>
