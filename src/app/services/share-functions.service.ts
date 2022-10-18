@@ -1,7 +1,7 @@
 import { SettingComponent } from './../component/setting/setting.component';
 import { UserService } from './user.service';
 import { SignupComponent } from '../component/signup/signup.component';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { observable, Subject } from 'rxjs';
 
 
@@ -22,6 +22,11 @@ export class ShareFunctionsService {
     constructor(private UserService:UserService
 ) { }
 
+ngOnInit(): void {
+
+
+
+}
 sendClickEvent(){
   this.Subject.next('f')
 }

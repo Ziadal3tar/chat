@@ -1,3 +1,4 @@
+import { io } from 'socket.io-client';
 
 
 import { HttpHeaders, HttpClient } from '@angular/common/http';
@@ -14,12 +15,23 @@ export class UserService  {
 
 
   private baseUrl = 'http://localhost:3000';
+  socket:any
 
   userData:any;
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.socket = io(this.baseUrl)
 
+  }
+  listen(eventName:any){
+    return new Observable((Subscriber)=>{
+      this.socket.on(eventName,(data:any)=>{
+        Subscriber.next(data)
+      })
+
+    })
+  }
   // ngOnInit(): void {
   //   this.updateProduct();
   // }
@@ -57,6 +69,17 @@ export class UserService  {
     return this.http.get(`${this.baseUrl}/getUserById/${id}`);
   }
 
+  emit(eventName:any,data:any){
+    this.socket.emit(eventName,data)
+  }
+  initChat(data:any){
+    return this.http.post(`${this.baseUrl}/initChat`,data);
+
+  }
+  getChat(data:any){
+    return this.http.post(`${this.baseUrl}/getChat`,data);
+
+  }
   // deleteUser(id: any) {
   //   return this.http.delete(`${this.baseUrl}/deleteUser/${id}`);
   // }

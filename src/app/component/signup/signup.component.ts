@@ -106,6 +106,7 @@ password:this.password
     console.log(user)
     this.UserService.regester(user).subscribe((data:any)=>{
       console.log(data)
+
       this.Router.navigate(['/login'])
 
     })

@@ -1,3 +1,4 @@
+<p  class=" cursorPointer position-absolute top-0 start-0" routerLink="/login" (click)="logout()">logout</p>
 <div class=" main w-auto h-auto">
 
   <div [ngClass]="cont" class="align-items-center justify-content-center d-flex">
@@ -19,7 +20,7 @@
 
 
         <div
-          style="background-image: url('../../../assets/img/Chatting-rafiki.svg'); background-size: contain; background-position: center center;"
+          style="background-image: url('./assets/img/Chatting-rafiki.svg'); background-size: contain; background-position: center center;"
           class=" w-100 h-100 " [ngClass]="{'d-none': chatItem !='d-none' }"></div>
 
 
@@ -61,7 +62,6 @@
 
 
           <div>
-background-image:
 
 
           </div>
@@ -69,25 +69,25 @@ background-image:
 
         </div>
 
-        <div [ngClass]="chatItem" class=" w-100 p-0 col-12 row position-relative  "
-          style="height: 84%; background-image: url(../../../assets/img/5556.jpg); background-size: cover; background-position: center center; scrollbar-gutter: stable;overflow-y: auto;">
+        <div [ngClass]="chatItem" class=" w-100 p-0 col-12 row position-relative d-flex align-items-center justify-content-start "
+          style="height: 84%; background-image: url(./assets/img/5556.jpg); background-size: cover; background-position: center center; scrollbar-gutter: stable;overflow-y: auto;">
           <div class="  opacity-75 col-12  m-0 position-absolute h-100 w-100 m-0 py-0"
             style="background-color: #205157;"> </div>
 
 
 
-          <div *ngFor="let message of chats let i = index"
-            [ngClass]="{'justify-content-end': message?.from == 'me','mt-3': i==0 } "
-            class="col-12  d-flex align-items-start " style="z-index: 9;">
+          <div *ngFor="let message of theChat let i = index"
+            [ngClass]="{'justify-content-end': message?.sendBy == userData._id,'mt-3': i==0 } "
+            class="col-12  d-flex align-items-start h-auto m-0 p-0 " style="z-index: 9;">
 
 
-            <div>
-              <p *ngIf="message.from !='me'" class=" text-start m-0 ms-3 text-white"> folan el folany</p>
+            <div class="my-1 mx-2 p-0">
+              <p *ngIf="message.sendBy != userData._id" class=" text-start m-0 ms-3 text-white"> {{friendData?.userName}}</p>
 
-              <p [ngClass]="{'me': message?.from == 'me','other':message?.from == 'other' }" class=" fs-6 w-auto  "
+              <p [ngClass]="{'me': message?.sendBy == userData._id,'other':message?.sendBy != userData._id }" class=" fs-6 w-auto h-auto m-0  "
                 style="width: auto!important;">
 
-                {{message?.message}}</p>
+                {{message?.content}}</p>
 
             </div>
 
@@ -105,10 +105,12 @@ background-image:
           <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center"><i
               class="fa-solid fa-paperclip"></i>
           </div>
-          <div class=" col-md-9 col-6"> <input type="text" placeholder="your message"
-              class=" w-100 rounded-5 bg-white border-0 p-2 ps-3"> </div>
+          <div class=" col-md-9 col-6 row">
+             <input type="text" [(ngModel)]="message" placeholder="your message"class="col-11  rounded-5 rounded-end   bg-white border-0 p-2 ps-3">
+            <div class="col-1 rounded-5 bg-white border-0 p-2 ps-3 rounded-start text-black text-center " (click)="sendMessage()"><i class="cursorPointer fa-solid fa-paper-plane"></i></div>
+          </div>
           <div class="fs-4 col-md-1 col-2 d-flex align-items-center justify-content-center"><i
-              class="fa-solid fa-microphone"></i>
+              class="text-black fa-solid fa-microphone"></i>
           </div>
         </div>
 
@@ -143,8 +145,8 @@ background-image:
 
           <div ngClass="bgcolor color"
             class="d-flex align-items-center justify-content-end col-10 h-auto my-auto text-black ">
-            <p class=" my-auto me-2">{{userData?.userData?.userName}}</p>
-            <div (click)="Setting()" [style.background]="'url(' + userData?.userData?.profilePic[0] + ')'"
+            <p class=" my-auto me-2">{{userData?.userName}}</p>
+            <div (click)="Setting()" [style.background]="'url(' + userData?.profilePic[0] + ')'"
               class="userImg rounded-5 overflow-hidden">
             </div>
 
@@ -165,16 +167,16 @@ background-image:
           <div style="height: 84%; scrollbar-gutter: stable;overflow-y: auto;"
             class=" col-12 bgcolor m-0 rounded-0 rounded-bottom bg-light ov">
             <div ngClass="bgcolor color cursorPointer"  *ngFor="let item of friends let i = index"
-              (click)="openChat(i)"
+              (click)="openChat(i,item._id)"
               class="d-flex align-items-center bg-light m-0 justify-content-between col-12 h-auto py-3 text-black  p-md-3 border-bottom ">
 
               <div class="d-flex  text-black align-items-center justify-content-around ">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </div>
-              <p class=" my-auto me-3">{{item.name}}</p>
+              <p class=" my-auto me-3">{{item.userName}}</p>
               <div style="width: 45px; height: 45px; background-size: cover; background-position: center center;"
                 class=" rounded-5 overflow-hidden">
-                <img class=" w-100" [src]="item.img" alt="">
+                <img class=" w-100" [src]="item.profilePic" alt="">
               </div>
 
 
@@ -203,7 +205,7 @@ background-image:
         class="col-lg-8 col-sm-12 row d-flex flex-column align-items-center justify-content-center h-100 p-md-4 p-sm-0 position-relative">
 
         <div
-          style="background-image: url('../../../assets/img/Chatting-rafiki.svg'); background-size: contain; background-position: center center;"
+          style="background-image: url('./assets/img/Chatting-rafiki.svg'); background-size: contain; background-position: center center;"
           class=" w-100 h-100 " [ngClass]="{'d-none': chatItem !='d-none' }"></div>
 
         <div [ngClass]="chatItem"
@@ -235,7 +237,7 @@ background-image:
             class="d-flex align-items-center justify-content-around h-auto my-auto m-0 col-lg-4 col-md-4 text-black col-8 ">
             <p class=" my-auto chatName">{{nameChat}}</p>
             <div
-              style="width: 45px; height: 45px; background-image: url(../../../assets/img/WhatsApp\ Image\ 2022-09-14\ at\ 6.12.54\ PM.jpeg); background-size: cover; background-position: center center;"
+              style="width: 45px; height: 45px; background-image: url(./assets/img/WhatsApp\ Image\ 2022-09-14\ at\ 6.12.54\ PM.jpeg); background-size: cover; background-position: center center;"
               class=" rounded-5 overflow-hidden">
             </div>
 
@@ -254,13 +256,13 @@ background-image:
 
 
         <div [ngClass]="chatItem" class=" w-100 p-0 col-12 row position-relative  "
-          style="height: 84%; background-image: url(../../../assets/img/5556.jpg); background-size: cover; background-position: center center; scrollbar-gutter: stable;overflow-y: auto;">
+          style="height: 84%; background-image: url(./assets/img/5556.jpg); background-size: cover; background-position: center center; scrollbar-gutter: stable;overflow-y: auto;">
           <div class="  opacity-75 col-12  m-0 position-absolute h-100 w-100 m-0 py-0"
             style="background-color: #205157;"> </div>
 
 
 
-          <div *ngFor="let message of chats let i = index"
+          <div *ngFor="let message of theChat let i = index"
             [ngClass]="{'justify-content-end': message?.from == 'me','mt-3': i==0 } "
             class="col-12  d-flex align-items-start " style="z-index: 9;">
 
@@ -323,8 +325,8 @@ background-image:
 
           <div (click)="Setting()"
             class=" cursorPointer color bgcolor d-flex align-items-center justify-content-end col-10 h-auto my-auto  ">
-            <p class=" my-auto ms-2">{{userData?.userData?.userName}}</p>
-            <div  [style.background]="'url(' + userData?.userData?.profilePic[0] + ')'"
+            <p class=" my-auto ms-2">{{userData?.userName}}</p>
+            <div  [style.background]="'url(' + userData?.profilePic[0] + ')'"
               class="userImg rounded-5 overflow-hidden">
             </div>
           </div>
@@ -342,7 +344,7 @@ background-image:
 
           <div style="height: 84%; scrollbar-gutter: stable;overflow-y: auto;"
             class=" col-12 bgcolor m-0  rounded-0 rounded-bottom bg-light ov">
-            <div *ngFor="let item of friends let i = index" (click)="openChat(i)"
+            <div *ngFor="let item of friends let i = index" (click)="openChat(i, item._id)"
               class="d-flex cursorPointer color bgcolor align-items-center bg-light m-0 justify-content-between col-12 h-auto py-3 text-black  p-md-3 border-bottom ">
 
               <div class="d-flex  text-black align-items-center justify-content-around ">

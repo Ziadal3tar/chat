@@ -36,11 +36,12 @@ export class LoginComponent implements OnInit {
     private AppComponent: AppComponent,
     private googleAuthService: SocialAuthService
   ) {
-    this.ShareFunctionsService.signOut = this.signOut;
+    // this.ShareFunctionsService.signOut = this.signOut;
     // this.colorValue = 'yellow';
   }
 
   ngOnInit(): void {
+    localStorage.clear()
     this.elem.nativeElement.style.setProperty('--bg', this.morning);
     this.elem.nativeElement.style.setProperty('--bgline', 'rgb(0 0 0 / 20%)');
 
@@ -123,6 +124,8 @@ export class LoginComponent implements OnInit {
         this.emailErr = '';
         this.passErr = '';
         this.message = 'welcome';
+localStorage.setItem('token', data.token);
+
         this.Router.navigate(['/home']);
       }
     });
@@ -156,10 +159,10 @@ export class LoginComponent implements OnInit {
       this.loginEnglish = '';
     }
   }
-  signOut(): void {
-    this.googleAuthService.signOut();
-    console.log(localStorage.getItem('token'));
-    localStorage.removeItem('token');
-    this.Router.navigate(['/login']);
-  }
+  // signOut(): void {
+  //   this.googleAuthService.signOut();
+  //   console.log(localStorage.getItem('token'));
+  //   localStorage.removeItem('token');
+  //   this.Router.navigate(['/login']);
+  // }
 }

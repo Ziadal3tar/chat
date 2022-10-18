@@ -10,7 +10,7 @@ import { NgwWowService } from 'ngx-wow';
 })
 export class AppComponent {
   title = 'chat';
-userData:any
+  userData: any;
   mood = 'morning';
   morning = 'url(./assets/img/white-abstract-background_23-2148817571.jpg)';
   night = 'url(./assets/img/6222603.jpg)';
@@ -22,12 +22,27 @@ userData:any
   ) {
     this.wowService.init();
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   }
   google(user: any) {
+
     this.UserService.googleRegester(user).subscribe((data: any) => {
-      if (data.Allow) {
-        this.Router.navigate(['/home']);
+
+      if (data.Allow && data.message == 'Done signUp') {
+        this.Router.navigate(['/login']);
+        console.log('1');
+
+
+
+
+      }else if(data.Allow && data.message == 'Done already exist and login'){
+        console.log("2");
         localStorage.setItem('token', data.token);
+
+        this.Router.navigate(['/home']);
+      }else{
+        console.log(data.message);
+
       }
     });
   }
@@ -47,5 +62,17 @@ userData:any
     }
   }
 
+  getdata() {
+    const token = localStorage.getItem('token');
+    this.UserService.getUserData(token).subscribe((data: any) => {
+      this.userData = data.userData;
+      console.log(data);
 
+      this.updateSocketId();
+    });
+  }
+
+  updateSocketId() {
+    this.UserService.emit('updateSocketId', this.userData?._id);
+  }
 }

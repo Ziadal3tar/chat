@@ -1,4 +1,24 @@
 <div class=" w-100 border-bottom pb-2 d-flex align-items-center justify-content-between  ">
   <p class="fa fs-3 m-0">profile</p>
-<div class=" m-0 p-0 my-auto cursorPointer backHome" (click)="backHome()"><i class="fa-solid fa-house p-0 m-0"></i></div>
+  <div class=" m-0 p-0 my-auto cursorPointer backHome" (click)="backHome()"><i class="fa-solid fa-house p-0 m-0"></i>
+  </div>
+</div>
+
+
+
+<div class=" col-12 row">
+
+<div class=" col-6 d-flex align-items-center justify-content-center">
+
+  <div [style.background]="'url(' + userData?.profilePic[0] + ')'" class="userimg  m-3 overflow-hidden ">
+    <div class="transition  w-100 h-100  d-flex align-items-center justify-content-center pen position-relative">
+      <i class="fa-solid fa-pen Pen position-absolute opacity-0 transition"></i>
+    </div>
+  </div>
+</div>
+
+  <div class=" col-6 d-flex align-items-center justify-content-start fs-3">
+    <p>ziad alattar</p>
+  </div>
+
 </div>

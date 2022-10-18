@@ -3,7 +3,7 @@
   <p class="fa fs-3 m-0"> reminder</p>
 <div class=" m-0 p-0 my-auto cursorPointer backHome" (click)="backHome()"><i class="fa-solid fa-house p-0 m-0"></i></div>
 </div>
-<div class=" col-12 row border-bottom p-0 border-2">
+<div class=" col-12 row border-bottom p-0 border-2 mx-auto d-flex justify-content-center">
 
   <div class="col-12 row ">
     <div class="col-md-4 col-sm-12 mb-sm-3  py-3">
@@ -50,7 +50,7 @@
 
 </div>
 
-<div class=" position-relative w-100  rounded-3 overflow-hidden h-auto bg p-5 my-3" *ngFor="let dummy of ' '.repeat(8).split(''), let i = index">
+<div class=" position-relative w-100  rounded-3 overflow-hidden h-auto bg py-5 px-2 my-3 d-flex justify-content-center flex-column" *ngFor="let dummy of ' '.repeat(8).split(''), let i = index">
   <i class="fa-solid fa-paper-plane position-absolute top-0 start-0 bg-primary p-2 text-white"
     style="border-radius: 0 0 50% 0;"></i>
 
@@ -60,11 +60,11 @@
 
 
 
-  <div class="col-12 row mb-2 d-sm-flex flex-sm-column flex-sm-column-reverse">
-    <div class=" col-md-6 col-sm-12">
-      <h5 class="">you must be sent to Muhammad</h5>
+  <div class="col-12 row mb-2 d-sm-flex flex-sm-column flex-sm-column-reverse mx-0">
+    <div class=" col-md-6 col-sm-12 mx-auto">
+      <h5 class="m-0">you must be sent to Muhammad</h5>
     </div>
-    <div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-between py-sm-3 ">
+    <div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-between py-sm-3 my-2 ">
 
       <div
         class=" bg-main  col-3 text-center p-0  rounded-5 mx-0 d-flex align-items-center justify-content-around flex-column py-2"
@@ -91,8 +91,8 @@
 
 
 
-  <div class="col-12 ">
-    <p class="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci blanditiis pariatur nobis. Dicta,
+  <div class="col-12 mx-auto">
+    <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci blanditiis pariatur nobis. Dicta,
       aliquam reprehenderit.</p>
   </div>
 </div>
